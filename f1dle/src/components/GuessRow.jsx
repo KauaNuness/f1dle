@@ -1,0 +1,53 @@
+function GuessRow({ guess, correct }) {
+  const getClass = (value, correctValue) => {
+    if (value === correctValue) return "correct";
+    return "wrong";
+  };
+
+  const getTeamClass = () => {
+    const intersection = guess.teams.filter((team) =>
+      correct.teams.includes(team)
+    );
+
+    if (intersection.length === correct.teams.length &&
+        guess.teams.length === correct.teams.length) {
+      return "correct";
+    }
+
+    if (intersection.length > 0) {
+      return "partial";
+    }
+
+    return "wrong";
+  };
+
+  return (
+    <div className="guess-row">
+      <div className={getClass(guess.nationality, correct.nationality)}>
+        {guess.nationality}
+      </div>
+
+      <div className={getTeamClass()}>
+        {guess.teams.join(", ")}
+      </div>
+
+      <div className={getClass(guess.number, correct.number)}>
+        #{guess.number}
+      </div>
+
+      <div className={getClass(guess.debut, correct.debut)}>
+        {guess.debut}
+      </div>
+
+      <div className={getClass(guess.titles, correct.titles)}>
+        🏆 {guess.titles}
+      </div>
+
+      <div className={getClass(guess.status, correct.status)}>
+        {guess.status}
+      </div>
+    </div>
+  );
+}
+
+export default GuessRow;
