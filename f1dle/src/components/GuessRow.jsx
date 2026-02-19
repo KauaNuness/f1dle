@@ -9,8 +9,10 @@ function GuessRow({ guess, correct }) {
       correct.teams.includes(team)
     );
 
-    if (intersection.length === correct.teams.length &&
-        guess.teams.length === correct.teams.length) {
+    if (
+      intersection.length === correct.teams.length &&
+      guess.teams.length === correct.teams.length
+    ) {
       return "correct";
     }
 
@@ -19,6 +21,11 @@ function GuessRow({ guess, correct }) {
     }
 
     return "wrong";
+  };
+
+  const getHint = (value, correctValue) => {
+    if (value === correctValue) return "";
+    return value > correctValue ? " ↓" : " ↑";
   };
 
   return (
@@ -33,14 +40,17 @@ function GuessRow({ guess, correct }) {
 
       <div className={getClass(guess.number, correct.number)}>
         #{guess.number}
+        {getHint(guess.number, correct.number)}
       </div>
 
       <div className={getClass(guess.debut, correct.debut)}>
         {guess.debut}
+        {getHint(guess.debut, correct.debut)}
       </div>
 
       <div className={getClass(guess.titles, correct.titles)}>
         🏆 {guess.titles}
+        {getHint(guess.titles, correct.titles)}
       </div>
 
       <div className={getClass(guess.status, correct.status)}>

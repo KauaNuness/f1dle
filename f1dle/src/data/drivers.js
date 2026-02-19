@@ -1,35 +1,246 @@
 export const drivers = [
   {
     id: 1,
-    name: "Max Verstappen",
-    nationality: "Netherlands",
-    teams: ["Toro Rosso", "Red Bull"],
-    number: 1,
-    debut: 2015,
-    titles: 3,
+    name: "Lando Norris",
+    nationality: "United Kingdom",
+    teams: ["McLaren"],
+    number: 6,
+    debut: 2019,
+    titles: 1,
     status: "active",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Max_Verstappen_2023.jpg"
+    image: "https://images.ctfassets.net/gy95mqeyjg28/24btmVlGxKrB3tHVKII0H/a7942e72bab1beef0083a9dc896b9605/2026_web_team_Lando_2.jpg?w=3840&q=75&fm=webp"
   },
   {
     id: 2,
+    name: "Oscar Piastri",
+    nationality: "Australia",
+    teams: ["McLaren"],
+    number: 81,
+    debut: 2023,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/4a3ecd96c2fd49508824cae497bfcec3.png?x-oss-process=style/_nowm"
+  },
+  {
+    id: 3,
+    name: "George Russell",
+    nationality: "United Kingdom",
+    teams: ["Mercedes", "Williams"],
+    number: 63,
+    debut: 2019,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/f10f01a1704147ca90ab3a4325f38785.png?x-oss-process=style/_nhd_en"
+  },
+  {
+    id: 4,
+    name: "Kimi Antonelli",
+    nationality: "Italy",
+    teams: ["Mercedes"],
+    number: 12,
+    debut: 2025,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/bcca7f61b6684e26bb28aedaf8d97c53.png"
+  },
+  {
+    id: 5,
+    name: "Max Verstappen",
+    nationality: "Netherlands",
+    teams: ["Red Bull", "Toro Rosso"],
+    number: 3,
+    debut: 2015,
+    titles: 4,
+    status: "active",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQwDaK2WEpux7b-wp9LMyfBEbWvrewGmQsgA&s"
+  },
+  {
+    id: 6,
+    name: "Isack Hadjar",
+    nationality: "France",
+    teams: ["Red Bull", "Racing Bulls"],
+    number: 6,
+    debut: 2026,
+    titles: 0,
+    status: "active",
+    image: "https://lncimg.lance.com.br/cdn-cgi/image/width=950,quality=75,fit=pad,format=webp/uploads/2025/02/isack-hadjar-aspect-ratio-512-320.png"
+  },
+  {
+    id: 7,
+    name: "Charles Leclerc",
+    nationality: "Monaco",
+    teams: ["Ferrari", "Sauber"],
+    number: 16,
+    debut: 2018,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/fe2de9975d864e38acfd9933164954a6.png?x-oss-process=style/_nowm"
+  },
+  {
+    id: 8,
     name: "Lewis Hamilton",
     nationality: "United Kingdom",
-    teams: ["McLaren", "Mercedes"],
+    teams: ["Ferrari", "Mercedes", "McLaren"],
     number: 44,
     debut: 2007,
     titles: 7,
     status: "active",
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Lewis_Hamilton_2022.jpg"
+    image: "https://img2.51gt3.com/rac/racer/202503/0ff8ae7649b447bd8e023f4e31dc4042.png?x-oss-process=style/_nhd_en"
   },
   {
-    id: 3,
-    name: "Ayrton Senna",
+    id: 9,
+    name: "Alex Albon",
+    nationality: "Thailand",
+    teams: ["Williams", "Toro Rosso", "Racing Bulls"],
+    number: 23,
+    debut: 2019,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/1f1fd439e5344c7a83faf4a80d09486f.png"
+  },
+  {
+    id: 10,
+    name: "Carlos Sainz",
+    nationality: "Spain",
+    teams: ["Williams", "Toro Rosso", "Ferrari", "Renault", "McLaren"],
+    number: 55,
+    debut: 2015,
+    titles: 0,
+    status: "active",
+    image: "https://img.band.com.br/image/2025/02/11/carlos-sainz-williams-2025-120-x-120-122827.jpg"
+  },
+  {
+    id: 11,
+    name: "Arvid Lindblad",
+    nationality: "United Kingdom",
+    teams: ["Racing Bulls"],
+    number: 41,
+    debut: 2026,
+    titles: 0,
+    status: "active",
+    image: "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/06/arvid_lindblad_formula_1.jpg?w=1200&h=900&crop=1"
+  },
+  {
+    id: 12,
+    name: "Liam Lawson",
+    nationality: "New Zealand",
+    teams: ["Racing Bulls"],
+    number: 30,
+    debut: 2023,
+    titles: 0,
+    status: "active",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs7vAr2lNPDiyTtn9nCqDBQk0V80mFWdZ7fw&s"
+  },
+  {
+    id: 13,
+    name: "Lance Stroll",
+    nationality: "Canada",
+    teams: ["Aston Martin", "Racing Point", "Williams"],
+    number: 18,
+    debut: 2017,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/2869081e10e6412894446d1320c9cb44.png?x-oss-process=style/_nowm"
+  },
+  {
+    id: 14,
+    name: "Fernando Alonso",
+    nationality: "Spain",
+    teams: ["Aston Martin", "Minardi", "McLaren", "Renault",
+      "Ferrari", "Alpine", "Aston Martin"
+    ],
+    number: 14,
+    debut: 2001,
+    titles: 2,
+    status: "active",
+    image: "https://www.us.ompracing.com/wp-content/uploads/sites/6/2024/04/Fernando-Alonso-1536x1536.jpg"
+  },
+  {
+    id: 15,
+    name: "Esteban Ocon",
+    nationality: "France",
+    teams: ["Haas", "Alpine", "Renault", "Force India", "Manor Racing"],
+    number: 31,
+    debut: 2016,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/34d4155677ae4874aae0240f9b366cc3.png?x-oss-process=style/_nhd_en"
+  },
+  {
+    id: 16,
+    name: "Oliver Bearman",
+    nationality: "United Kingdom",
+    teams: ["Haas"],
+    number: 87,
+    debut: 2024,
+    titles: 0,
+    status: "active",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVny2tv6YALIkpeyjSaRWbg0UZB0xypWuMew&s"
+  },
+  {
+    id: 17,
+    name: "Nico Hülkenberg",
+    nationality: "Germany",
+    teams: ["Audi", "Sauber", "Williams", "Force India", "Renault", "Haas"],
+    number: 27,
+    debut: 2010,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/737aac3065d74096b767308cf4c3164e.png?x-oss-process=style/_nowm"
+  },
+  {
+    id: 18,
+    name: "Gabriel Bortoleto",
     nationality: "Brazil",
-    teams: ["Toleman", "Lotus", "McLaren", "Williams"],
-    number: 12,
-    debut: 1984,
-    titles: 3,
-    status: "deceased",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/96/Ayrton_Senna_1989.jpg"
+    teams: ["Audi", "Sauber"],
+    number: 5,
+    debut: 2026,
+    titles: 0,
+    status: "active",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPnynxmWwcf4sSGc3sGAmpEYDjwf736iiaA&s"
+  },
+  {
+    id: 19,
+    name: "Pierre Gasly",
+    nationality: "France",
+    teams: ["Alpine", "Toro Rosso", "Red Bull","Racing Bulls", "Alpine", "AlphaTauri" ],
+    number: 10,
+    debut: 2017,
+    titles: 0,
+    status: "active",
+    image: "https://img2.51gt3.com/rac/racer/202503/2e2727ea4b564c55a6b5e18a25d7e230.png?x-oss-process=style/_nowm"
+  },
+  {
+    id: 20,
+    name: "Franco Colapinto",
+    nationality: "Argentina",
+    teams: ["Alpine", "Williams"],
+    number: 43,
+    debut: 2026,
+    titles: 0,
+    status: "active",
+    image: "https://www.motoremacao.com.br/uploads/images/2024/12/franco-colapinto-uma-jornada-de-superacao-na-formula-1-edcb7.jpg"
+  },
+  {
+    id: 21,
+    name: "Sergio Pérez",
+    nationality: "Mexico",
+    teams: ["Cadillac"],
+    number: 11,
+    debut: 2011,
+    titles: 0,
+    status: "active",
+    image: "https://www.formulaonehistory.com/wp-content/uploads/2023/10/Sergio-Perez-Cadillac.webp"
+  },
+  {
+    id: 22,
+    name: "Valtteri Bottas",
+    nationality: "Finland",
+    teams: ["Cadillac"],
+    number: 77,
+    debut: 2013,
+    titles: 0,
+    status: "active",
+    image: "https://www.formulaonehistory.com/wp-content/uploads/2023/10/Valtteri-Bottas-Cadillac.webp"
   }
 ];
