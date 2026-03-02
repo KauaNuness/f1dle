@@ -20,24 +20,6 @@ body {
   margin-bottom: 8px;
 }
 
-.image-container img {
-  width: 220px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 10px 0 16px;
-  transition: 0.3s ease;
-  border: 2px solid #2e2e2e;
-}
-
-.blur {
-  filter: blur(15px);
-}
-
-.clear {
-  filter: blur(0);
-}
-
 .attempts,
 .legend {
   margin: 8px 0 16px;
@@ -46,9 +28,16 @@ body {
 
 .guess-row {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: 88px repeat(6, minmax(0, 1fr));
   gap: 10px;
   margin: 10px 0;
+}
+
+.guess-row-animated {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  animation: guessReveal 360ms ease forwards;
+  animation-delay: var(--guess-delay, 0ms);
 }
 
 .guess-row div {
@@ -60,6 +49,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.driver-cell {
+  background: #202020;
+  border: 1px solid #3b3b3b;
+}
+
+.driver-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff22;
 }
 
 .guess-row-head div {
@@ -83,6 +85,7 @@ body {
   margin-top: 20px;
   color: lime;
   font-size: 22px;
+  animation: winPop 700ms ease;
 }
 
 .lose {
@@ -108,27 +111,6 @@ body {
 .suggestions {
   position: absolute;
   width: 100%;
-  background: #222;
-  border-radius: 6px;
-  margin-top: 5px;
-  max-height: 170px;
-  overflow-y: auto;
-  z-index: 10;
-  border: 1px solid #333;
-}
-
-.suggestion-item {
-  width: 100%;
-  text-align: left;
-  padding: 10px;
-  cursor: pointer;
-  color: white;
-  background: transparent;
-  border: none;
-}
-
-.suggestion-item:hover {
-  background: #333;
 }
 
 .suggestion-empty {
@@ -155,6 +137,61 @@ body {
   width: min(90vw, 420px);
 }
 
+.modal-win {
+  animation: winPop 600ms ease;
+  box-shadow: 0 0 0 2px #1f8f3a66, 0 12px 30px rgba(31, 143, 58, 0.35);
+}
+
+.guess-row-win {
+  position: relative;
+}
+
+.guess-row-win::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 10px;
+  pointer-events: none;
+  animation: celebrate 900ms ease calc(var(--guess-delay, 0ms) + 360ms);
+}
+
+@keyframes guessReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes winPop {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes celebrate {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(31, 143, 58, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 3px #1f8f3a, 0 0 18px rgba(31, 143, 58, 0.8);
+  }
+}
+
 .modal-card button {
   margin-top: 12px;
   border: none;
@@ -168,7 +205,7 @@ body {
 
 @media (max-width: 900px) {
   .guess-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 72px repeat(2, 1fr);
   }
 
   .guess-row-head {

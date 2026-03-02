@@ -1,4 +1,4 @@
-function GuessRow({ guess, correct }) {
+function GuessRow({ guess, correct, delay = 0, isCorrectGuess = false }) {
   const getClass = (value, correctValue) => {
     if (value === correctValue) return "correct";
     return "wrong";
@@ -28,8 +28,14 @@ function GuessRow({ guess, correct }) {
     return value > correctValue ? " ↓" : " ↑";
   };
 
-  return (
-    <div className="guess-row">
+  return (<div
+      className={`guess-row guess-row-animated ${isCorrectGuess ? "guess-row-win" : ""}`}
+      style={{ "--guess-delay": `${delay}ms` }}
+    >
+      <div className="driver-cell">
+        <img src={guess.image} alt={guess.name} className="driver-thumb" />
+      </div>
+
       <div className={getClass(guess.nationality, correct.nationality)}>
         {guess.nationality}
       </div>

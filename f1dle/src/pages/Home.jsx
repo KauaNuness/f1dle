@@ -4,13 +4,12 @@ import { getDriverOfDay } from "../utils/getDriverOfDay";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import GuessRow from "../components/GuessRow";
-import DriverImage from "../components/DriverImage";
 import ResultModal from "../components/ResultModal";
 
 const MAX_ATTEMPTS = 6;
 
 function Home() {
-const correctDriver = useMemo(() => getDriverOfDay(), []);
+  const correctDriver = useMemo(() => getDriverOfDay(), []);
   const [guesses, setGuesses] = useState([]);
   const [won, setWon] = useState(false);
   const [showResult, setShowResult] = useState(false);
@@ -21,8 +20,6 @@ const correctDriver = useMemo(() => getDriverOfDay(), []);
 
   const handleGuess = (driver) => {
     if (isGameOver || guessedIds.includes(driver.id)) return;
-
-    setGuesses([driver, ...guesses]);
     const updatedGuesses = [driver, ...guesses];
     setGuesses(updatedGuesses);
 
@@ -39,9 +36,7 @@ const correctDriver = useMemo(() => getDriverOfDay(), []);
 
   return (
     <div className="container">
-      <Header />  
-      <DriverImage driver={correctDriver} revealed={isGameOver} />
-
+      <Header />
       <p className="attempts">
         Tentativas restantes: <strong>{attemptsLeft}</strong> / {MAX_ATTEMPTS}
       </p>
@@ -54,6 +49,7 @@ const correctDriver = useMemo(() => getDriverOfDay(), []);
       />
 
       <div className="guess-row guess-row-head">
+        <div>Piloto</div>
         <div>Nacionalidade</div>
         <div>Equipes</div>
         <div>Número</div>
@@ -62,9 +58,15 @@ const correctDriver = useMemo(() => getDriverOfDay(), []);
         <div>Status</div>
       </div>
 
-      <div className="guesses">  {guesses.map((guess) => (
-          <GuessRow key={guess.id} guess={guess} correct={correctDriver} />
-        ))}
+      <div className="guesses">  {guesses.map((guess, index) => (
+        <GuessRow
+          key={guess.id}
+          guess={guess}
+          correct={correctDriver}
+          delay={index * 90}
+          isCorrectGuess={guess.id === correctDriver.id}
+        />
+      ))}
       </div>
 
       <p className="legend">Dica: setas ↑↓ indicam se o valor correto é maior ou menor.</p>
