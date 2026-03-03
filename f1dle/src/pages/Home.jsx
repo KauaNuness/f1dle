@@ -6,17 +6,13 @@ import SearchBar from "../components/SearchBar";
 import GuessRow from "../components/GuessRow";
 import ResultModal from "../components/ResultModal";
 
-const MAX_ATTEMPTS = 6;
-
 function Home() {
   const correctDriver = useMemo(() => getDriverOfDay(), []);
   const [guesses, setGuesses] = useState([]);
   const [won, setWon] = useState(false);
   const [showResult, setShowResult] = useState(false);
-
-  const attemptsLeft = MAX_ATTEMPTS - guesses.length;
   const guessedIds = guesses.map((guess) => guess.id);
-  const isGameOver = won || attemptsLeft <= 0;
+  const isGameOver = won;
 
   const handleGuess = (driver) => {
     if (isGameOver || guessedIds.includes(driver.id)) return;
@@ -26,20 +22,13 @@ function Home() {
     if (driver.name === correctDriver.name) {
       setWon(true);
       setShowResult(true);
-      return;
-    }
-
-    if (updatedGuesses.length >= MAX_ATTEMPTS) {
-      setShowResult(true);
     }
   };
 
   return (
     <div className="container">
       <Header />
-      <p className="attempts">
-        Tentativas restantes: <strong>{attemptsLeft}</strong> / {MAX_ATTEMPTS}
-      </p>
+      <p className="attempts">Sem limite de chutes. Continue até acertar.</p>
 
       <SearchBar
         drivers={drivers}
@@ -72,9 +61,6 @@ function Home() {
       <p className="legend">Dica: setas ↑↓ indicam se o valor correto é maior ou menor.</p>
 
       {won && <h2 className="win">Você acertou! 🎉</h2>}
-
-      {isGameOver && !won && <h2 className="lose">Que pena! Tente novamente amanhã.</h2>}
-
       <ResultModal
         isOpen={showResult}
         won={won}

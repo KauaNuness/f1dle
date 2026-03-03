@@ -35,7 +35,7 @@ function SearchBar({ drivers, guessedIds, disabled, onGuess }) {
     <div className="search-container">
       <input
         type="text"
-        placeholder={disabled ? "Rodada finalizada" : "Digite o nome do piloto..."}
+        placeholder={disabled ? "Você acertou o piloto de hoje!" : "Digite o nome do piloto..."}
         value={input}
         disabled={disabled}
         onChange={(e) => setInput(e.target.value)}
